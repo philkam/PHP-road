@@ -1,7 +1,7 @@
 <?php
 
 function func(){
-    $val2 = 0;
+   static $val2 = 0;
     $val2++;
     echo "The value is : $val2 <br>";
 }
