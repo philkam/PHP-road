@@ -26,6 +26,9 @@
     echo strtoupper($str);  //MAKES ALL WORDS CAPITAL
     echo "<br>";
 
+    echo strtolower($str);  //makes all words lowercase
+    echo "<br>";
+
 
 
 ?>
