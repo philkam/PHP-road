@@ -30,5 +30,9 @@
     echo "<br>";
 
 
+    $email = 'philcho98@gmail.com';
+     echo strstr($email,'@');
+
+
 
 ?>
