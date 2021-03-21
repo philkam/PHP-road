@@ -17,9 +17,10 @@
     echo strlen($str1); 
     echo "<br>";
 
-    echo ucfirst($str)
+    echo ucfirst($str);
+    echo "<br>";
 
-
+    echo ucwords($str); 
 
 
 
