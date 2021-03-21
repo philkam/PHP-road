@@ -21,7 +21,10 @@
     echo "<br>";
 
     echo ucwords($str); 
+    echo "<br>";
 
+    echo strtoupper($str);  //MAKES ALL WORDS CAPITAL
+    echo "<br>";
 
 
 
