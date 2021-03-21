@@ -8,9 +8,14 @@
     echo strpos($str,"my",8) ;//string postion(string, "Substring", after the 8th);
     echo "<br>";
 
-    
+
     $str1 = ' This is a string ';
     echo trim($str1).'Google';
+    //echo $str.'Google' // adds spaces
+    echo "<br>";
+
+    echo strlen($str1); 
+
 
 
 
