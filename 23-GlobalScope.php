@@ -1,9 +1,9 @@
 <?php
  
+ $val1 ='Cat'; 
 
 
 function func(){
-      $val1 ='Cat'; //local variable because it is inside the function */
 
 
 
