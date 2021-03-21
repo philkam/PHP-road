@@ -31,6 +31,6 @@ if($var4 >= $var3){
 }
 
 if($var2 <= $var3){
-    echo $var2.' is less than '.$var3.'<br>';
+    echo $var2.' is less than or equal to '.$var3.'<br>';
 }
 ?>
