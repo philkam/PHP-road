@@ -38,10 +38,54 @@ if (in_array($s_day,$days)){
 
 //Check if it is an array
 if(is_array($days)){
-    echo "it is an array";
+    echo "it is an array<br><br>";
 }else{
-    echo "It is not an array";
+    echo "It is not an array<br><br>";
 }
+
+//current prints first element in array;
+echo "The first element in the array is ".current($days);
+echo '<br><br>';
+
+//array_push adds element to end of array
+$items = array('watch','phone', 'scissor', 'speaker', 'laptop');
+array_push($items, 'glass', 'bottle', 'mouse');
+print_r($items);
+echo '<br><br>';
+
+//array_unshift adds elements to beginning of array
+array_unshift($items, 'book', 'calculator','mask');
+print_r($items);
+echo '<br><br>';
+
+
+//array-shift removes the first element from array
+array_shift($items); 
+print_r($items);
+echo '<br><br>';
+
+//array-pop removes the last element from array
+array_pop($items);
+print_r($items);
+echo '<br><br>';
+
+
+//sorts items from ascending to descending
+sort($items);
+print_r($items); 
+echo '<br><br>';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>
