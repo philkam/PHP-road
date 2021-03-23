@@ -18,4 +18,7 @@ for($c = 0; $c <=6; $c++){
    echo  $days[$c].'<br>';
 }
 
+//print_r to print rawcode
+print_r($days);
+
 ?>
