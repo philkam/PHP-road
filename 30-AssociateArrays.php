@@ -4,7 +4,7 @@ $tasks = array('fst' => 'first','sec' => 'second', 'thr' => 'third', 'fth' => 'f
 echo $tasks['thr'].'<br>';
 
 
-$tasks['x'] = 'Ten';
+$tasks['x'] = 'ten';
 echo $tasks['x'].'<br>';
 
 $days = array();
@@ -22,7 +22,20 @@ foreach($tasks as $key => $task){
 
     echo $key.' => '.$task.'<br>'; //prints key with task
 }
+echo '<br><br><br>';
+
+//string function -asort sorts according to data
+asort($tasks);
+foreach($tasks as $key => $task){
+    echo $key. '=> '.$task.'<br>';
+}
+echo '<br><br><br>';
 
 
+//ksort- sorts according to keys
+ksort($tasks);
+foreach($tasks as $key => $task){
+    echo $key. '=> '.$task.'<br>';
+}
 
 ?>
