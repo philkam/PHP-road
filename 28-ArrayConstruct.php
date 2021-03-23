@@ -11,8 +11,11 @@ $days[6] = 'Sunday';
 echo $days[4].'<br>';
 
 $months = array('January', 'February', 'March', 'April', 'May', 'June', 'July');
-echo $months[2];
+echo $months[2].'<br><br><br>';
 
-
+//for loop for printing array
+for($c = 0; $c <=6; $c++){
+   echo  $days[$c].'<br>';
+}
 
 ?>
