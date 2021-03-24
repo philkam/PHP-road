@@ -4,7 +4,7 @@
 </head>
 <body>
     <!--Get sends through data through URL but post  doesn't -->
-    <form  method="POST">
+    <form  method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
         <table>
             <tr>
                 <td>E-mail</td>
