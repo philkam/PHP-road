@@ -59,6 +59,35 @@ echo "The comment is :  ".trim(htmlspecialchars($_POST['comment']));
                     <td><input type="text" name="subject" ><?php echo $subject; ?></td>                 
                 </tr>
                 <tr>
+                    <td>Gender</td>
+                </tr>
+                <tr>
+                    <td>Male:<br>Female:</td>
+                    <td><input type="radio" value="male" name ="gender"><br><input type="radio" name= "gender" value="female"></td>
+                </tr>
+                <tr>
+                    <td>  Skills:</td>
+                    <td>
+                        <input type="checkbox" name="skills1" value="html">:HTML <br>
+                        <input type="checkbox" name="skills2" value="php">:PHP <br>
+                        <input type="checkbox" name="skills3" value="css">:CSS <br>
+                        <input type="checkbox" name="skills4" value="javascript">:JAVASCIPT <br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name = "country">
+                            <option selected >Select a country</option>
+                            <option value="nig">Nigeria</option>
+                            <option value="gh">Ghana</option>
+                            <option value="egypt">Egypt</option>
+                            <option value="mali">Mali</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>Comments<td>
                     <td><textarea  name="comment"></textarea></td>                 
                 </tr>
