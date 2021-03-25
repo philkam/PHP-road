@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     </head>
     <body>
-        <table>
+        <div class="container-fluid">
+        <table class="table table-striped" >
            
                 <thead>
                     <th>Id</th>
@@ -46,5 +47,6 @@
         ?>
                 </tbody>
         </table>
+        </div>
     </body>
 </html>
