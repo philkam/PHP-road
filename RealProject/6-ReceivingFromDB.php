@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>Retrieving Data From Database</title>
+        <script src="bootstrap/js/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     </head>
     <body>
-        <table border="1">
+        <table>
            
                 <thead>
                     <th>Id</th>
