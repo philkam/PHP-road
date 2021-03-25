@@ -3,7 +3,7 @@
         <title>PHP form </title>
     </head>
     <body>
-        <form method="$_POST" action="<?php $_SERVER['PHP_SELF']?>">
+        <form method="POST" action="<?php $_SERVER['PHP_SELF']?>">
             <table>
                 <tr>
                     <td>Name: <td>
@@ -32,10 +32,10 @@
 
 <?php
 if(isset($_POST['validate'])){
-echo "The name is $_POST[name] <br>";
-echo "The name is $_POST[email] <br>";
-echo "The name is $_POST[subject] <br>";
-echo "The name is $_POST[comment] <br>";
+echo 'The name is  '.htmlspecialchars($_POST['name']).'<br>';
+echo "The Email address is ".strip_tags($_POST['email']).'<br>';
+echo "The subject is $_POST[subject] <br>";
+echo "The comment is :  ".trim(htmlspecialchars($_POST['comment']));
 
 
 
