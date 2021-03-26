@@ -2,9 +2,10 @@
 <html>
     <head>
         <title>New Form</title>
-        <script src="bootstrap/js/jquery.js"></script>
-        <script src="bootstrap/js/bootstrap.js"></script>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+      <link rel="stylesheet" type = "text/css" href ="css/bootstrap.css">
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
     </head>
     <body>
         <div class="container">
@@ -39,12 +40,13 @@
                 </div>
             </div>
             <div class="form-group" >
-                <label class="control-label col-sm-2"></label>
-                <div class="col-sm-5"></div>
+                <label class="control-label col-sm-2">Skills</label>
+                <div class="col-sm-4">
                 <label class="checkbox-inline"><input type="checkbox">HTML</label>
                 <label class="checkbox-inline"><input type="checkbox">CSS</label>
                 <label class="checkbox-inline"><input type="checkbox">PHP</label>
                 <label class="checkbox-inline"><input type="checkbox">Javascript</label>
+                </div>
 
             </div>
             <div class="form-group">
