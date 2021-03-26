@@ -46,8 +46,8 @@
                         <td>' .$rows['gender']. '</td>
                         <td>' .$rows['skill1'].' , '.$rows['skill2'].', '.$rows['skill3'].','.$rows['skill4']. '</td>
                         <td>' .$rows['country']. '</td>
-                        <td><a href="10-detail.php?user_id='.$rows['id'].'">Access</a> </td>
-                        <td><a href="6-ReceivingFromDB.php?del_id='.$rows['id'].'">Delete</a>  </td>
+                        <td><a class="btn btn-info btn-xs" href="10-detail.php?user_id='.$rows['id'].'">Access</a> </td>
+                        <td><a class= "btn btn-danger btn-xs" href="6-ReceivingFromDB.php?del_id='.$rows['id'].'">Delete</a>  </td>
                     </tr>
             
             ';
