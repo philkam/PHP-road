@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<?php include 'C:/wamp64/www/php/RealProject/7-db.php';
+if(isset($_GET['edit_id'])){
+    $edit_sql = "SELECT * FROM users WHERE id= '$_GET[edit_id]'";
+    $run_sql = mysqli_query($conn,$edit_sql);
+    while($rows = mysqli_fetch_assoc($run_sql)){
+        $name = $rows['name'];
+        $email = $rows['email'];
+        $subject = $rows['subject'];
+        $gender = $rows['gender'];
+        $country = $rows['country'];
+        $comment = $rows['comment'];
+
+
+    }
+}else{
+    $name =  '';
+    $email = '';
+    $subject = '';
+    $gender = '';
+    $country = '';
+    $comment ='';
+
+}
+
+
+
+?>
 <html>
     <head>
         <title>New Form</title>
