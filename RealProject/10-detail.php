@@ -9,10 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="Jumbotron">
-                <h1>User Details</h1>
-            <p>Let just get the complete details</p>
-            </div>
+            
             <?php
             if(isset($_GET['user_id'])){
 
@@ -22,6 +19,12 @@
 
             while($rows = mysqli_fetch_assoc($run_sql)){
                 echo '
+
+                <div class="Jumbotron">
+                <h1>User Details</h1>
+                 <p>Let just get the complete details</p>
+                 <a href="8-HTMLformWithBootstrap.php?edit_id='.$rows['id'].'" class="btn btn-warning">Edit '.$rows['name'].'</a>
+                 </div>
 
                 <div class="row">
                 <strong class="col-sm-3">Name</strong>
