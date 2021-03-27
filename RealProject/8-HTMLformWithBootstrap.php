@@ -11,18 +11,19 @@ if(isset($_GET['edit_id'])){
         $country = $rows['country'];
         $comments = $rows['comments'];
         if($gender == 'Male'){
-            $select_tag = '<select><option value= "male" selected >Male</option>
-                                    <option value="female" >Female</option>
+            $select_tag = '<select class="form-control">
+                                <option value= "male" selected>Male</option>
+                                <option value="female" >Female</option>
                          </select>';
- 
-
+                  
         }else{
-            $select_tag = '<select><option value= "male" >Male</option>
-                                  <option value="female" selected>Female</option>
-                         </select>';
-
-
-        }
+            $select_tag = '<select class="form=control">
+                                <option value="">Select your gender</option>
+                                <option value= "male" >Male</option>
+                                <option value="female" selected>Female</option>
+                          </select>';
+            
+      }
 
 
     }
@@ -33,6 +34,11 @@ if(isset($_GET['edit_id'])){
     $gender = '';
     $country = '';
     $comments ='';
+    $select_tag = '<select class="form-control" required>
+                            <option value="">Select your gender</option>
+                            <option value= "Male" >Male</option>
+                            <option value="Female" >Female</option>
+                         </select>';
 
 }
 
@@ -72,11 +78,7 @@ if(isset($_GET['edit_id'])){
             <div class="form-group">
                 <label for="subject" class="control-label col-sm-2">Gender*</label>
                 <div class="col-sm-2">
-                    <select class="form-control" name="gender" required>
-                        <option class="">Your gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <?php echo $select_tag ?>
                 </div>
             </div>
             <div class="form-group" >
