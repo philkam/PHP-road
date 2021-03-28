@@ -104,6 +104,36 @@ if(isset($_GET['edit_id'])){
                 </div>
             </div>
             <div class="form-group">
+                <label for="subject" class="control-label  col-sm-2">Country</label>
+                <div class="col-sm-2">
+                    <select class="form-control" required name="country">
+                        <option value="">Your Country</option>
+                        <?php 
+                        $sel_countries = "SELECT * FROM countries";
+                        $run_countries = mysqli_query($conn, $sel_countries);
+                        while($rows = mysqli_fetch_assoc($run_countries)){
+                            if($country == $rows['country_code']){
+                                $selected = 'selected';
+                            }else{
+                                $selected = '';
+
+                            }
+                            echo 
+                                    '<option value="'.$rows['country_code'].'" '.$selected.'>'. $rows['country_name'] .'</option>'
+
+
+
+
+
+                            ;
+
+                        }
+                        ?>
+                      
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
                 <label  class="control-label col-sm-2">Comment</label>
                 <div class="col-sm-5">
                     <textarea class="form-control my-fixed" name="comment" rows="8"> <?php echo $comments ?></textarea>
