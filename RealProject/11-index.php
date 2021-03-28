@@ -45,7 +45,7 @@
                                 <p>'.substr($rows['description'],0,244).'
                                 </p>
                                 </div>
-                                <a href="12-Postpage.php" class="btn btn-primary">Read More</a>
+                                <a href="12-Postpage.php?post_id='.$rows['id'].'" class="btn btn-primary">Read More</a>
                       
     
                             </div>
