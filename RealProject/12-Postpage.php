@@ -1,3 +1,7 @@
+<?php
+    include 'includes/db.php'
+?>
+
 <html>
     <head>
         <title>Bootstrap Navbar and Header</title>
