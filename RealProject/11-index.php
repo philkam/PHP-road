@@ -1,3 +1,7 @@
+<?php
+    include 'includes/db.php'
+?>
+
 <html>
     <head>
         <title>Bootstrap Navbar and Header</title>
@@ -21,6 +25,39 @@
         <div class="container">
             <article class="row">
                 <section class ="col-lg-8">
+                <?php 
+                    $sel_sql = "SELECT * FROM posts";
+                    $run_sql = mysqli_query($conn,$sel_sql);
+                    while($rows = mysqli_fetch_assoc($run_sql)){
+                        echo '
+
+                        <div class="panel panel-success">
+                        <div class="panel-heading">
+                        <h3>'.$rows['title'].'</h3>
+                        </div>
+                            <div class="panel-body">
+                                <div class="panel-header">
+                                </div>
+                                <div class="col-lg-4">
+                                <img src="'.$rows['image'].'" width="100%">
+                                </div>
+                                <div class="col-lg-8">
+                                <p>'.substr($rows['description'],0,244).'
+                                </p>
+                                </div>
+                                <a href="12-Postpage.php" class="btn btn-primary">Read More</a>
+                      
+    
+                            </div>
+                        </div>
+                        
+                        
+                        ';
+                    }
+
+                
+                
+                ?>
                     <div class="panel panel-success">
                     <div class="panel-heading">
                     <h3>The first Post</h3>
