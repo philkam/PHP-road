@@ -29,7 +29,7 @@
                             <div class="panel-header">
                             </div>
                             <div class="col-lg-4">
-                            <img src="violin.jpg" width="100%">
+                            <img src="images/violin.jpg" width="100%">
                             </div>
                             <div class="col-lg-8">
                             <p>Ever considered Violin lessons.
@@ -43,50 +43,7 @@
 
                         </div>
                     </div>
-                    <div class="panel panel-success">
-                    <div class="panel-heading">
-                    <h3>The first Post</h3>
-                    </div>
-                        <div class="panel-body">
-                            <div class="panel-header">
-                            </div>
-                            <div class="col-lg-4">
-                            <img src="violin.jpg" width="100%">
-                            </div>
-                            <div class="col-lg-8">
-                            <p>Ever considered Violin lessons.
-                            A classical violinist works on one piece at a time.
-                                The criteria she uses to choose the piece that will get her whole attention for the next few days — or weeks —is her intention.
-                                
-                            </p>
-                            </div>
-                            <a href="12-Postpage.php" class="btn btn-primary">Read More</a>
-                  
-
-                        </div>
-                    </div>
-                    <div class="panel panel-success">
-                    <div class="panel-heading">
-                    <h3>The first Post</h3>
-                    </div>
-                        <div class="panel-body">
-                            <div class="panel-header">
-                            </div>
-                            <div class="col-lg-4">
-                            <img src="violin.jpg" width="100%">
-                            </div>
-                            <div class="col-lg-8">
-                            <p>Ever considered Violin lessons.
-                            A classical violinist works on one piece at a time.
-                                The criteria she uses to choose the piece that will get her whole attention for the next few days — or weeks —is her intention.
-                                
-                            </p>
-                            </div>
-                            <a href="12-Postpage.php" class="btn btn-primary">Read More</a>
-                  
-
-                        </div>
-                    </div>
+                 
                 </section>
                 
                 <aside class="col-lg-4">
