@@ -20,14 +20,22 @@
         </header>
         <div class="container">
             <article class="row">
-                <section class="col-lg-8">
-                <div class="panel panel-default">
-                <div class="panel-body"></div>
-                </div>
+                <section class ="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="panel-header">
+                                <h3>The first Post</h3>
+                            </div>
+                            <img src="violin.jpg" width="100%">
+                            <p>Ever considered Violin lessons</p>
+
+                        </div>
+                    </div>
                 </section>
-                <aside class="col-lg-5"></aside>
+                <aside class="col-lg-4">
+
+                </aside>
             </article>
-        </div>
 
     </body>
 </html>
