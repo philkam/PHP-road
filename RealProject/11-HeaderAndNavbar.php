@@ -20,8 +20,12 @@
         </header>
         <div class="container">
             <article class="row">
-                <section></section>
-                <aside></aside>
+                <section class="col-lg-8">
+                <div class="panel panel-default">
+                <div class="panel-body"></div>
+                </div>
+                </section>
+                <aside class="col-lg-5"></aside>
             </article>
         </div>
 
