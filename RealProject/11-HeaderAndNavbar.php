@@ -40,7 +40,23 @@
                         </div>
                     </div>
                 </section>
+                
                 <aside class="col-lg-4">
+                    <form class="panel-group form-horizontal" role="form">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="panel-header">
+                                    <h4>Search Something</h4>
+                                </div>
+                                <div class="input-group ">
+                                <input type="search" class="form-control" placeholder="Search something...">
+                                <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></i>Q</i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
                     <form class="panel-group form-horizontal" role="form" >
                         <div class="panel panel-default">
                         <div class="panel-heading">Login</div>
