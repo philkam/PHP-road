@@ -11,13 +11,13 @@ if(isset($_GET['edit_id'])){
         $country = $rows['country'];
         $comments = $rows['comments'];
         if($gender == 'Male'){
-            $select_tag = '<select class="form-control">
+            $select_tag = '<select class="form-control" name="gender">
                                 <option value= "male" selected>Male</option>
                                 <option value="female" >Female</option>
                          </select>';
                   
         }else{
-            $select_tag = '<select class="form=control">
+            $select_tag = '<select class="form-control" name="gender">
                                 <option value="">Select your gender</option>
                                 <option value= "male" >Male</option>
                                 <option value="female" selected>Female</option>
@@ -34,7 +34,7 @@ if(isset($_GET['edit_id'])){
     $gender = '';
     $country = '';
     $comments ='';
-    $select_tag = '<select class="form-control" required>
+    $select_tag = '<select class="form-control" name="gender" required>
                             <option value="">Select your gender</option>
                             <option value= "Male" >Male</option>
                             <option value="Female" >Female</option>
@@ -91,18 +91,7 @@ if(isset($_GET['edit_id'])){
                 </div>
 
             </div>
-            <div class="form-group">
-                <label for="subject" class="control-label  col-sm-2">Country</label>
-                <div class="col-sm-2">
-                    <select class="form-control" required name="country">
-                        <option value="">Your Country</option>
-                        <option value="gh">Ghana</option>
-                        <option value="nig">Nigeria</option>
-                        <option value="ben">Benin</option>
-                        <option value="sa">South Africa</option>
-                    </select>
-                </div>
-            </div>
+  
             <div class="form-group">
                 <label for="subject" class="control-label  col-sm-2">Country</label>
                 <div class="col-sm-2">
