@@ -45,12 +45,22 @@
             <div class="row">
                 <strong class="col-sm-3">Skills</strong>
                 <div class="col-sm-3">'.$rows['name'].'</div>
-            </div>
-            <div class="row">
+            </div>';
+            $sel_country = "SELECT * FROM countries WHERE country_code = '$rows[country]'";
+            $run_country = mysqli_query($conn,$sel_country);
+            while($c_rows = mysqli_fetch_assoc($run_country)){
+                echo '
+                <div class="row">
                 <strong class="col-sm-3">Country</strong>
-                <div class="col-sm-3">'.$rows['country'].'</div>
-            </div>
-            <div class="row">
+                <div class="col-sm-3">'.$c_rows['country_name'].'</div>
+             </div>
+                
+                ';
+            }
+
+
+            
+            echo ' <div class="row">
                 <strong class="col-sm-3">Comment</strong>
                 <div class="col-sm-3">'.$rows['comments'].'</div>
             </div>

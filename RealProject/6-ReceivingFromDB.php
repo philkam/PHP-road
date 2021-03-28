@@ -44,9 +44,13 @@
                         <td>' .$rows['email']. '</td>
                         <td>' .$rows['subject']. '</td>
                         <td>' .$rows['gender']. '</td>
-                        <td>' .$rows['skill1'].' , '.$rows['skill2'].', '.$rows['skill3'].','.$rows['skill4']. '</td>
-                        <td>' .$rows['country']. '</td>
-                        <td><a class="btn btn-info btn-xs" href="10-detail.php?user_id='.$rows['id'].'">Access</a> </td>
+                        <td>' .$rows['skill1'].' , '.$rows['skill2'].', '.$rows['skill3'].','.$rows['skill4']. '</td>';
+                        $sel_country = "SELECT * FROM countries WHERE country_code = '$rows[country]'";
+                        $run_country = mysqli_query($conn, $sel_country);
+                        while($c_rows = mysqli_fetch_assoc($run_country)){
+                            echo '<td>' .$c_rows['country_name']. '</td>';
+                        }   
+                        echo ' <td><a class="btn btn-info btn-xs" href="10-detail.php?user_id='.$rows['id'].'">Access</a> </td>
                         <td><a class= "btn btn-danger btn-xs" href="6-ReceivingFromDB.php?del_id='.$rows['id'].'">Delete</a>  </td>
                     </tr>
             
