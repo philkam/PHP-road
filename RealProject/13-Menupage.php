@@ -11,28 +11,7 @@
 
     </head>
     <body>
-        <header class="navbar navbar-inverse navbar-static-top ">
-            <div class="container">
-                <a href="11-index.php" class="navbar-brand">Phil System</a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="#">Home</a>
-                    <?php
-                    $sel_cat = "SELECT * FROM category";
-                    $run_cat  = mysqli_query($conn,$sel_cat);
-                    while($rows = mysqli_fetch_assoc($run_cat)){
-                        if($_GET['cat_name']==$rows['category_name']){
-                            $class = 'active';
-                        }else{
-                            $class = '';
-                        }
-                        echo '<li class="'.$class.'"><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
-                    }                    
-                    ?>
-                    <li><a href="#">Contact</a>
-                    <li><a href="#">Log out</a>
-                </ul>
-            </div>
-        </header>
+        <?php include 'includes/header.php;'?>
         <div class="container">
             <article class="row">
                 <section class ="col-lg-8">
@@ -140,20 +119,25 @@
 
                     </form>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">Lorem Ipsum</h4>
-                            <p class="list-group-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <?php
+                    $sel_side = "SELECT * FROM posts";
+                    $run_side = mysqli_query($conn,$sel_side);
+                    while($rows = mysqli_fetch_assoc($run_side)){
+                        echo '
+                        <a href="12-Postpage.php?post_id='.$rows['id'].'" class="list-group-item">
+                            <div class="col-sm-4">
+                            <img src="'.$rows['image'].'" width="100%">
+                            </div>
+                            <div class="col-sm-8">
+                            <h4 class="list-group-item-heading">'.$rows['title'].'</h4>
+                            <p class="list-group-item-text">'.substr($rows['description'],0,100).' </p>
+                            </div>
+                            <div style="clear:both;"></div>
+                            </a>
+                        ';
 
-                        </a>
-                        <a href="#" class="list-group-item active">
-                            <h4 class="list-group-item-heading">Lorem Ipsum</h4>
-                            <p class="list-group-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">Lorem Ipsum</h4>
-                            <p class="list-group-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </a>
+                    }
+                    ?>           
                     </div>
                 </aside>
             </article>
