@@ -55,7 +55,7 @@
             <div class="form group">
                 <label  class="col-sm-2 control-label"></label>
                 <div class="col-sm-8">
-                <input type="submit"  class="btn btn-danger btn-block" name= "submit_contact" value="Submit"></td>  
+                <input type="submit"  class="btn btn-danger btn-block" name= "submit_contact" value="Submit your form"></td>  
                 </div>
             </div>
 
@@ -66,9 +66,13 @@
         </section>
         <?php include 'includes/aside.php'  ?>
 
+
     </article>
 </div>
     </body>
+    <div style="width: 50px; height: 80px;"></div>
+    <?php  include 'includes/footer.php' ?>
+
 </html>
 
 
