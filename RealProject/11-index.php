@@ -13,7 +13,7 @@
     <body>
         <header class="navbar navbar-inverse navbar-static-top ">
             <div class="container">
-                <a href="index.php" class="navbar-brand">Phil System</a>
+                <a href="11-index.php" class="navbar-brand">Phil System</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#">Home</a>
                     <li><a href="#">Article</a>
@@ -26,6 +26,7 @@
             <article class="row">
                 <section class ="col-lg-8">
                 <?php 
+                
                     $sel_sql = "SELECT * FROM posts";
                     $run_sql = mysqli_query($conn,$sel_sql);
                     while($rows = mysqli_fetch_assoc($run_sql)){
@@ -33,7 +34,7 @@
 
                         <div class="panel panel-success">
                         <div class="panel-heading">
-                        <h3>'.$rows['title'].'</h3>
+                        <h3><a href="12-Postpage.php?post_id='.$rows['id'].'">'.$rows['title'].'</a></h3>
                         </div>
                             <div class="panel-body">
                                 <div class="panel-header">
@@ -54,11 +55,12 @@
                         
                         ';
                     }
+                
 
                 
                 
                 ?>
-                    <div class="panel panel-success">
+                    <!--div class="panel panel-success">
                     <div class="panel-heading">
                     <h3>The first Post</h3>
                     </div>
@@ -79,7 +81,7 @@
                   
 
                         </div>
-                    </div>
+                    </div-->
                  
                 </section>
                 
