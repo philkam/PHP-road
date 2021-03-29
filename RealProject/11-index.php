@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>Bootstrap Navbar and Header</title>
+        <title>Index || Phil</title>
       <link rel="stylesheet" type = "text/css" href ="css/bootstrap.css">
       <script type="text/javascript" src="js/jquery.min.js"></script>
      <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -16,7 +16,13 @@
                 <a href="11-index.php" class="navbar-brand">Phil System</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#">Home</a>
-                    <li><a href="#">Article</a>
+                    <?php
+                    $sel_cat = "SELECT * FROM category";
+                    $run_cat  = mysqli_query($conn,$sel_cat);
+                    while($rows = mysqli_fetch_assoc($run_cat)){
+                        echo '<li><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
+                    }
+                    ?>
                     <li><a href="#">Contact</a>
                     <li><a href="#">Log out</a>
                 </ul>
