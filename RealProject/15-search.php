@@ -17,6 +17,14 @@
                 <section class ="col-lg-8">
                 <?php 
                 if(isset($_GET['search_submit'])){
+                    echo '
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4> You searched for "'.$_GET['search'].'" </h4>
+                    </div>
+                </div>
+                
+                ';
                     $sel_sql = "SELECT * FROM posts WHERE title LIKE '%$_GET[search]%' OR description LIKE '%$_GET[search]%' ";
                     $run_sql = mysqli_query($conn,$sel_sql);
                     while($rows = mysqli_fetch_assoc($run_sql)){
