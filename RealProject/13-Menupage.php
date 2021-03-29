@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>Phil SYS</title>
+        <title>Index || Phil</title>
       <link rel="stylesheet" type = "text/css" href ="css/bootstrap.css">
       <script type="text/javascript" src="js/jquery.min.js"></script>
      <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -16,7 +16,13 @@
                 <a href="11-index.php" class="navbar-brand">Phil System</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#">Home</a>
-                    <li><a href="#">Article</a>
+                    <?php
+                    $sel_cat = "SELECT * FROM category";
+                    $run_cat  = mysqli_query($conn,$sel_cat);
+                    while($rows = mysqli_fetch_assoc($run_cat)){
+                        echo '<li><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
+                    }
+                    ?>
                     <li><a href="#">Contact</a>
                     <li><a href="#">Log out</a>
                 </ul>
@@ -25,48 +31,64 @@
         <div class="container">
             <article class="row">
                 <section class ="col-lg-8">
-                <?php
-                if(isset($_GET['post_id'])){
-                $sel_sql = "SELECT * FROM posts WHERE id = '$_GET[post_id]'";
-                $run_sql = mysqli_query($conn,$sel_sql);
-                while($rows = mysqli_fetch_assoc($run_sql)){
-                    echo '
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="panel-header">
-                                <h2>'.$rows['title'].'</h2>
-                            </div>
-                            <img src="'.$rows['image'].'" width="100%">
-                            <p>'.$rows['description'].'</p>
-                        </div>
-                    </div>
-                    
-                    
-                    ';
-                }
-            }
+                <?php 
                 
+                    $sel_sql = "SELECT * FROM posts WHERE category='$_GET[cat_name]'";
+                    $run_sql = mysqli_query($conn,$sel_sql);
+                    while($rows = mysqli_fetch_assoc($run_sql)){
+                        echo '
+
+                        <div class="panel panel-success">
+                        <div class="panel-heading">
+                        <h3><a href="12-Postpage.php?post_id='.$rows['id'].'">'.$rows['title'].'</a></h3>
+                        </div>
+                            <div class="panel-body">
+                                <div class="panel-header">
+                                </div>
+                                <div class="col-lg-4">
+                                <img src="'.$rows['image'].'" width="100%">
+                                </div>
+                                <div class="col-lg-8">
+                                <p>'.substr($rows['description'],0,244).'
+                                </p>
+                                </div>
+                                <a href="12-Postpage.php?post_id='.$rows['id'].'" class="btn btn-primary">Read More</a>
+                      
+    
+                            </div>
+                        </div>
+                        
+                        
+                        ';
+                    }
+                
+
                 
                 
                 ?>
-                    <!--div class="panel panel-default">
+                    <!--div class="panel panel-success">
+                    <div class="panel-heading">
+                    <h3>The first Post</h3>
+                    </div>
                         <div class="panel-body">
                             <div class="panel-header">
-                                <h2>The first Post</h2>
                             </div>
+                            <div class="col-lg-4">
                             <img src="images/violin.jpg" width="100%">
+                            </div>
+                            <div class="col-lg-8">
                             <p>Ever considered Violin lessons.
                             A classical violinist works on one piece at a time.
                                 The criteria she uses to choose the piece that will get her whole attention for the next few days — or weeks —is her intention.
-                                Does she want to improve her technique, the agility of her fingers, her tuning skills? Maybe she will go for one of Kreisler’s studies.
-                                Or does she prefer to express her awe for existence itself, letting out her creativity in the form of a musical prayer? Maybe then she will choose a sonata by Bach.
-                                However, if she is after a commitment, if she wants to prove to herself — and the world — that she is not only a brilliant performer, but also an artist with her own message to spread, she will wholeheartedly dedicate her hours to a whole Shostakovich Violin Concerto, with her own cadenza and her carefully planned adornments.
-                                She knows she is not the first one to make this choice: people have been playing the works of those composers for centuries — there have been countless interpretations, endless critiques, and an unimaginable number of discussions over which style of play is the most “ethical”, “authentic”, or “historically correct”.
-                                But she knows better than to give in to the pressure of living up to historic legends.
+                                
                             </p>
+                            </div>
+                            <a href="12-Postpage.php" class="btn btn-primary">Read More</a>
+                  
 
                         </div>
                     </div-->
+                 
                 </section>
                 
                 <aside class="col-lg-4">
