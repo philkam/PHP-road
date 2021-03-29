@@ -1,32 +1,51 @@
+<?php
+    include 'includes/db.php'
+?>
+
 <html>
     <head>
-        <title>Bootstrap Navbar and Header</title>
+        <title>Post || Phil</title>
       <link rel="stylesheet" type = "text/css" href ="css/bootstrap.css">
       <script type="text/javascript" src="js/jquery.min.js"></script>
      <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
     </head>
     <body>
-        <header class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <a href="index.php" class="navbar-brand">Phil System</a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a>
-                    <li><a href="#">Article</a>
-                    <li><a href="#">Contact</a>
-                    <li><a href="#">Log out</a>
-                </ul>
-            </div>
-        </header>
+    <?php include 'includes/header.php'?>
+
         <div class="container">
             <article class="row">
                 <section class ="col-lg-8">
+                <?php
+                if(isset($_GET['post_id'])){
+                $sel_sql = "SELECT * FROM posts WHERE id = '$_GET[post_id]'";
+                $run_sql = mysqli_query($conn,$sel_sql);
+                while($rows = mysqli_fetch_assoc($run_sql)){
+                    echo '
                     <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="panel-header">
+                                <h2>'.$rows['title'].'</h2>
+                            </div>
+                            <img src="'.$rows['image'].'" width="100%">
+                            <p>'.$rows['description'].'</p>
+                        </div>
+                    </div>
+                    
+                    
+                    ';
+                }
+            }
+                
+                
+                
+                ?>
+                    <!--div class="panel panel-default">
                         <div class="panel-body">
                             <div class="panel-header">
                                 <h2>The first Post</h2>
                             </div>
-                            <img src="violin.jpg" width="100%">
+                            <img src="images/violin.jpg" width="100%">
                             <p>Ever considered Violin lessons.
                             A classical violinist works on one piece at a time.
                                 The criteria she uses to choose the piece that will get her whole attention for the next few days — or weeks —is her intention.
@@ -38,7 +57,7 @@
                             </p>
 
                         </div>
-                    </div>
+                    </div-->
                 </section>
                 
                 <aside class="col-lg-4">
@@ -98,13 +117,20 @@
                         <a href="#" class="list-group-item">
                             <h4 class="list-group-item-heading">Lorem Ipsum</h4>
                             <p class="list-group-item-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
                         </a>
-                        
                     </div>
-
                 </aside>
             </article>
-
+        </div>
+        <div style="width:50px;height:50px;"></div>
+        <footer class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+        <p class="navbar-text"> Created by Philip Marfo</p>
+        <a href="#" class="btn btn-success pull-right navbar-btn">Share</a>
+        
+        </div>
+        
+        </footer>
+  
     </body>
 </html>
