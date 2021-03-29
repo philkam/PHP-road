@@ -15,13 +15,18 @@
             <div class="container">
                 <a href="11-index.php" class="navbar-brand">Phil System</a>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a>
+                    <li ><a href="#">Home</a>
                     <?php
                     $sel_cat = "SELECT * FROM category";
                     $run_cat  = mysqli_query($conn,$sel_cat);
                     while($rows = mysqli_fetch_assoc($run_cat)){
-                        echo '<li><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
-                    }
+                        if($_GET['cat_name']==$rows['category_name']){
+                            $class = 'active';
+                        }else{
+                            $class = '';
+                        }
+                        echo '<li class="'.$class.'"><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
+                    }                    
                     ?>
                     <li><a href="#">Contact</a>
                     <li><a href="#">Log out</a>
