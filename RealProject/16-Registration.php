@@ -1,9 +1,11 @@
 <?php include 'includes/db.php';
-    if(isset($_POST['submit_contact'])){
+    if(isset($_POST['submit_user'])){
          $date = date('Y-m-d h:i:s');
-        $ins_sql = "INSERT INTO comments(name,email,subject,comment,date) VALUES('$_POST[name]', 
-        '$_POST[email]','$_POST[subject]','$_POST[comment]','$date')";
-        mysqli_query($conn, $ins_sql);
+         $ins_sql = "INSERT INTO users(user_firstname, user_lastname, user_email, user_password, user_gender,
+         user_marital, user_contact, user_designation, user_website, user_address, user_date) VALUES ('$_POST[name])', '$_POST[email])', '$_POST[password])',
+         '$_POST[gender])','$_POST[maritalstatus])','$_POST[phone_no])','$_POST[designation])','$_POST[website])', '$_POST[address])', 
+         '$_POST[about_me])', '$date'";
+         $run_sql = mysqli_query($conn,$ins_sql);
 
     
     }
@@ -27,11 +29,17 @@
         <div class= "jumbotron">
     <h1>Register</h1>
     </div>
-        <form class="form-horizontal" action="14-Contact.php" method="POST" role="form">
+        <form class="form-horizontal" action="16-Registration.php" method="POST" role="form">
             <div class="form-group">
-                <label for="name" class="control-label col-sm-2">Name*</label>
+                <label for="name" class="control-label col-sm-2"> First Name*</label>
                 <div class="col-sm-8">
-                    <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" required>
+                    <input type="text" id="firstname" class="form-control" name="firstname" placeholder="Full Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="control-label col-sm-2">Last Name*</label>
+                <div class="col-sm-8">
+                    <input type="text" id="lastname" class="form-control" name="lastname" placeholder="Full Name" required>
                 </div>
             </div>
             <div class="form-group">
@@ -55,7 +63,7 @@
             <div class="form-group">
                 <label for="Gender" class="control-label col-sm-2">Gender</label>
                 <div class="col-sm-3" >
-                <select class="form-control">
+                <select class="form-control" name="gender" id="gender">
                     <option value="">Select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -63,7 +71,7 @@
                 </div>
             <label for="Gender" class="control-label col-sm-2">Marital status</label>
                 <div class="col-sm-3" >
-                <select class="form-control">
+                <select class="form-control" name="maritalstatus" id="maritalstatus"> 
                     <option value="">Select Status</option>1
                     <option value="single">Single</option>
                     <option value="married">Married</option>
@@ -75,7 +83,7 @@
             <div class="form-group">
                 <label for="contact" class="control-label col-sm-2">Phone number</label>
                 <div class="col-sm-8">
-                    <input type="number" id="contact" class="form-control" name="contact"  placeholder="Enter your phone number" required>
+                    <input type="number" id="contact" class="form-control" name="phone_no" id="phone_no"  placeholder="Enter your phone number" required>
                 </div>
             </div>
             <div class="form-group">
@@ -87,19 +95,19 @@
             <div class="form-group">
                 <label for="website" class="control-label col-sm-2">Official website</label>
                 <div class="col-sm-8">
-                    <input type="text" id="website" class="form-control" name="website"  placeholder="Enter your official website" required>
+                    <input type="text" id="website" name="website" class="form-control" name="website"  placeholder="Enter your official website" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="address" class="control-label col-sm-2">Address</label>
                 <div class="col-sm-8">
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea class="form-control" name="address" id="address" rows="3"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label for="aboutme" class="control-label col-sm-2">About me:</label>
                 <div class="col-sm-8">
-                <textarea class="form-control" rows="6"></textarea>
+                <textarea class="form-control-2" name="about_me" id="about_me" rows="6"></textarea>
                 </div>
             </div>
             <div class="form group">
