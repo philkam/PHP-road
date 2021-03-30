@@ -19,7 +19,8 @@
                         echo '<li class="'.$class.'"><a href="13-Menupage.php?cat_name='.$rows['category_name'].'">'.$rows['category_name'].'</a></li>';
                     }                    
                     ?>
-                    <li><a href="#">Contact</a>
+                    <li><a href="14-Contact.php">Contact</a>
+                    <li><a href="16-Registration.php">Registration</a>
                     <li><a href="#">Log out</a>
                 </ul>
             </div>
