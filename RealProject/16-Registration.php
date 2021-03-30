@@ -1,14 +1,16 @@
 <?php include 'includes/db.php';
-    if(isset($_POST['submit_user'])){
-         $date = date('Y-m-d h:i:s');
-         $ins_sql = "INSERT INTO users(user_firstname, user_lastname, user_email, user_password, user_gender,
-         user_marital, user_contact, user_designation, user_website, user_address, user_date) VALUES ('$_POST[name])', '$_POST[email])', '$_POST[password])',
-         '$_POST[gender])','$_POST[maritalstatus])','$_POST[phone_no])','$_POST[designation])','$_POST[website])', '$_POST[address])', 
-         '$_POST[about_me])', '$date'";
-         $run_sql = mysqli_query($conn,$ins_sql);
-
-    
-    }
+$match = '';
+if(isset($_POST['submit_user'])){
+    if($_POST['password'] == $_POST['con_password']){
+    $date = date('Y-m-d h:i:s');
+    $ins_sql = "INSERT INTO users(firstname, lastname, email, u_password, gender, marital, contact, designation, website, u_address, about, u_date) VALUES
+     ('$_POST[firstname]', '$_POST[lastname]', '$_POST[email]', '$_POST[password]', '$_POST[gender]', '$_POST[marital]', '$_POST[contact]', '$_POST[designation]', '$_POST[website]', 
+     '$_POST[address]', '$_POST[about]', '$date' )";
+    mysqli_query($conn,$ins_sql);
+}else{
+    $match = '<div class="alert alert-danger">Password doesn\'t match</div>';
+}
+}
 
 ?>
 
@@ -29,7 +31,9 @@
         <div class= "jumbotron">
     <h1>Register</h1>
     </div>
-        <form class="form-horizontal" action="16-Registration.php" method="POST" role="form">
+    <?php echo $match ?>
+
+        <form class="form-horizontal" action="16-Registration.php" method="post" role="form">
             <div class="form-group">
                 <label for="name" class="control-label col-sm-2"> First Name*</label>
                 <div class="col-sm-8">
@@ -49,7 +53,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="control-label col-sm-2">Password</label>
+                <label for="password" class="control-label col-sm-2">Password*</label>
                 <div class="col-sm-8">
                     <input type="password" id="password" class="form-control" name="password"  placeholder="Insert password" required>
                 </div>
@@ -61,18 +65,18 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="Gender" class="control-label col-sm-2">Gender</label>
+                <label for="gender" class="control-label col-sm-2">Gender</label>
                 <div class="col-sm-3" >
-                <select class="form-control" name="gender" id="gender">
+                <select class="form-control" name="gender" id="gender" required>
                     <option value="">Select your gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
                 </div>
-            <label for="Gender" class="control-label col-sm-2">Marital status</label>
+            <label for="marital" class="control-label col-sm-2">Marital status</label>
                 <div class="col-sm-3" >
-                <select class="form-control" name="maritalstatus" id="maritalstatus"> 
-                    <option value="">Select Status</option>1
+                <select class="form-control" name="marital" id="marital"> 
+                    <option value="">Select Status</option>
                     <option value="single">Single</option>
                     <option value="married">Married</option>
                     <option value="divorced">Divorced</option>
@@ -81,9 +85,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="contact" class="control-label col-sm-2">Phone number</label>
+                <label for="contact" class="control-label col-sm-2">Phone number*</label>
                 <div class="col-sm-8">
-                    <input type="number" id="contact" class="form-control" name="phone_no" id="phone_no"  placeholder="Enter your phone number" required>
+                    <input type="text" id="contact" class="form-control" name="contact"   placeholder="Enter your phone number" required>
                 </div>
             </div>
             <div class="form-group">
@@ -95,7 +99,7 @@
             <div class="form-group">
                 <label for="website" class="control-label col-sm-2">Official website</label>
                 <div class="col-sm-8">
-                    <input type="text" id="website" name="website" class="form-control" name="website"  placeholder="Enter your official website" required>
+                    <input type="text" id="website"  class="form-control" name="website"  placeholder="Enter your official website" required>
                 </div>
             </div>
             <div class="form-group">
@@ -105,15 +109,15 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="aboutme" class="control-label col-sm-2">About me:</label>
+                <label for="About" class="control-label col-sm-2" >About me*:</label>
                 <div class="col-sm-8">
-                <textarea class="form-control-2" name="about_me" id="about_me" rows="6"></textarea>
+                <textarea class="form-control" name="about" id="about" rows="6" required></textarea>
                 </div>
             </div>
             <div class="form group">
                 <label  class="col-sm-2 control-label"></label>
                 <div class="col-sm-8">
-                <input type="submit"  class="btn btn-danger btn-block" name= "submit_user" value="Register Yourself"></td>  
+                <input type="submit"  class="btn btn-danger btn-block" name="submit_user" value="Register Yourself"></td>  
                 </div>
             </div>
 
